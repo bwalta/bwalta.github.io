@@ -5,7 +5,25 @@
 @tailwind utilities;
 
 :root {
+  --ink: 10 10 10;
+  --canvas: 250 250 250;
+  --line: 229 229 229;
+  --muted: 107 114 128;
+  --soft: 242 242 242;
+  --surface: 255 255 255;
   color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: 245 245 245;
+    --canvas: 10 10 10;
+    --line: 38 38 38;
+    --muted: 156 163 175;
+    --soft: 20 20 20;
+    --surface: 24 24 24;
+    color-scheme: dark;
+  }
 }
 
 html {
@@ -20,8 +38,8 @@ body {
 }
 
 ::selection {
-  background-color: rgba(0, 102, 255, 0.18);
-  color: #0A0A0A;
+  background-color: rgba(0, 102, 255, 0.25);
+  color: rgb(var(--ink));
 }
 
 /* Hero gradient blob */
@@ -35,6 +53,15 @@ body {
               radial-gradient(circle at 70% 60%, #E9D5FF 0%, transparent 55%),
               radial-gradient(circle at 50% 80%, #FFE4B5 0%, transparent 50%);
   animation: drift 24s ease-in-out infinite alternate;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blob {
+    opacity: 0.25;
+    background: radial-gradient(circle at 30% 30%, #1E3A8A 0%, transparent 55%),
+                radial-gradient(circle at 70% 60%, #6D28D9 0%, transparent 55%),
+                radial-gradient(circle at 50% 80%, #B45309 0%, transparent 50%);
+  }
 }
 
 @keyframes drift {
@@ -63,7 +90,13 @@ body {
 }
 .tilt:hover {
   transform: translateY(-4px) scale(1.005);
-  box-shadow: 0 24px 60px -20px rgba(10, 10, 10, 0.15);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .tilt:hover {
+    box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.6);
+  }
 }
 
 /* Phone frame */
@@ -75,7 +108,17 @@ body {
     0 0 0 1px rgba(10, 10, 10, 0.06),
     0 30px 80px -20px rgba(10, 10, 10, 0.18),
     0 8px 20px -8px rgba(10, 10, 10, 0.08);
-  background: #fff;
+  background: rgb(var(--surface));
+}
+
+@media (prefers-color-scheme: dark) {
+  .phone {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.05) inset,
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 30px 80px -20px rgba(0, 0, 0, 0.6),
+      0 8px 20px -8px rgba(0, 0, 0, 0.4);
+  }
 }
 
 /* Browser frame */
@@ -86,12 +129,21 @@ body {
     0 0 0 1px rgba(10, 10, 10, 0.06),
     0 30px 80px -20px rgba(10, 10, 10, 0.18),
     0 8px 20px -8px rgba(10, 10, 10, 0.08);
-  background: #fff;
+  background: rgb(var(--surface));
+}
+
+@media (prefers-color-scheme: dark) {
+  .browser {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 30px 80px -20px rgba(0, 0, 0, 0.6),
+      0 8px 20px -8px rgba(0, 0, 0, 0.4);
+  }
 }
 
 /* Stack chip */
 .chip {
-  @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white/70 px-3 py-1 text-xs font-medium text-ink/80 backdrop-blur;
+  @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface/70 px-3 py-1 text-xs font-medium text-ink/80 backdrop-blur;
 }
 
 /* Link underline animation */

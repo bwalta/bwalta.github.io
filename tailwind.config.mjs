@@ -1,15 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
-        ink: '#0A0A0A',
-        canvas: '#FAFAFA',
+        ink: 'rgb(var(--ink) / <alpha-value>)',
+        canvas: 'rgb(var(--canvas) / <alpha-value>)',
         accent: '#0066FF',
-        line: '#E5E5E5',
-        muted: '#6B7280',
-        soft: '#F2F2F2',
+        line: 'rgb(var(--line) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        soft: 'rgb(var(--soft) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['"Inter Variable"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
