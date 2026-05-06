@@ -1,0 +1,20 @@
+---
+interface Props { t: any; lang?: 'de' | 'en'; }
+const { t, lang = 'de' } = Astro.props;
+const year = new Date().getFullYear();
+const impressumHref = lang === 'de' ? '/impressum' : '/en/impressum';
+---
+<footer class="border-t border-line/60 py-12">
+  <div class="mx-auto max-w-page px-6 md:px-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div>
+      <p class="font-display font-semibold tracking-tight">@bwalta</p>
+    </div>
+    <div class="flex flex-wrap items-center gap-6 text-sm text-ink/65">
+      <a href="https://github.com/bwalta" target="_blank" rel="noreferrer" class="link hover:text-ink transition-colors">GitHub</a>
+      <a href="#work" class="link hover:text-ink transition-colors">{t.nav.work}</a>
+      <a href="#stack" class="link hover:text-ink transition-colors">{t.nav.stack}</a>
+      <a href={impressumHref} class="link hover:text-ink transition-colors">Impressum</a>
+    </div>
+    <p class="text-xs text-muted">{t.footer.copy} · {year}</p>
+  </div>
+</footer>

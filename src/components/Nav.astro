@@ -1,0 +1,35 @@
+---
+interface Props {
+  t: any;
+  lang: 'de' | 'en';
+  altHref: string;
+  altLabel: string;
+}
+const { t, lang, altHref, altLabel } = Astro.props;
+const homeHref = lang === 'de' ? '/' : '/en/';
+---
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-canvas/70 border-b border-line/60">
+  <nav class="mx-auto max-w-page px-6 md:px-10 h-14 flex items-center justify-between">
+    <a href={homeHref} class="text-sm font-semibold tracking-tight">@bwalta</a>
+
+    <div class="hidden md:flex items-center gap-8 text-sm text-ink/70">
+      <a href="#work" class="link hover:text-ink transition-colors">{t.nav.work}</a>
+      <a href="#stack" class="link hover:text-ink transition-colors">{t.nav.stack}</a>
+      <a href="#about" class="link hover:text-ink transition-colors">{t.nav.about}</a>
+    </div>
+
+    <div class="flex items-center gap-3 text-xs">
+      <a
+        href={altHref}
+        class="rounded-full border border-line bg-white px-3 py-1.5 font-medium text-ink/80 hover:text-ink hover:border-ink/30 transition-all"
+        aria-label={`Switch to ${altLabel}`}
+      >{altLabel}</a>
+      <a
+        href="https://github.com/bwalta"
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-full bg-ink text-canvas px-3 py-1.5 font-medium hover:bg-accent transition-colors"
+      >{t.nav.github} ↗</a>
+    </div>
+  </nav>
+</header>

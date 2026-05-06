@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "work": "Work",
+    "stack": "Stack",
+    "about": "About",
+    "github": "GitHub"
+  },
+  "hero": {
+    "kicker": "Apps · AI · Automation",
+    "title_a": "I build",
+    "title_b": "apps & tools",
+    "title_c": "that solve real problems.",
+    "sub": "Solo builder · Founder of Aeopilot. A small selection of things I'm currently working on.",
+    "cta_work": "See work",
+    "cta_github": "On GitHub"
+  },
+  "about": {
+    "label": "About",
+    "name": "Ben Walta",
+    "title": "Small studio, big ideas.",
+    "body_1": "Solo builder — I design and ship software from first sketch to App Store release. Mobile apps, web tools and a bit of automation in between.",
+    "body_2": "What you see here is just an excerpt. Stack and tools change with whatever the idea actually needs."
+  },
+  "work": {
+    "label": "Featured Work",
+    "intro": "Three projects I'm currently into."
+  },
+  "projects": {
+    "companionry": {
+      "kicker": "iOS · App Store",
+      "title": "Companionry",
+      "desc": "A learning app for students with small AI companions that help with daily practice.",
+      "cta": "On the App Store"
+    },
+    "aeopilot": {
+      "kicker": "Web · AI Tooling",
+      "title": "Aeopilot",
+      "desc": "A tool that checks how well websites are picked up by AI search like ChatGPT, Claude or Gemini.",
+      "cta": "View live"
+    }
+  },
+  "other": {
+    "label": "Other Work",
+    "title": "Smaller things.",
+    "wa_title": "WhatsApp Agent",
+    "wa_desc": "A WhatsApp bot that replies in a natural way.",
+    "pw_title": "Playwright Automation",
+    "pw_desc": "Browser automations for recurring web tasks — tests, scraping, workflows."
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "What I build with.",
+    "intro": "Pragmatic mix — whatever fits the idea best."
+  },
+  "footer": {
+    "tagline": "",
+    "copy": "© @bwalta"
+  }
+}

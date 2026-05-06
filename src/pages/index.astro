@@ -1,0 +1,27 @@
+---
+import Base from '@/layouts/Base.astro';
+import Nav from '@/components/Nav.astro';
+import Hero from '@/components/Hero.astro';
+import About from '@/components/About.astro';
+import Work from '@/components/Work.astro';
+import Other from '@/components/Other.astro';
+import Stack from '@/components/Stack.astro';
+import Footer from '@/components/Footer.astro';
+import t from '@/i18n/de.json';
+---
+<Base
+  lang="de"
+  title="@bwalta — Apps, AI & Automation"
+  description="Apps, KI-Tools und ein bisschen Automatisierung."
+  altLangHref="/en/"
+>
+  <Nav t={t} lang="de" altHref="/en/" altLabel="EN" />
+  <main>
+    <Hero t={t} />
+    <Work t={t} />
+    <Other t={t} />
+    <Stack t={t} />
+    <About t={t} />
+  </main>
+  <Footer t={t} lang="de" />
+</Base>

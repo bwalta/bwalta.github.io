@@ -1,0 +1,33 @@
+---
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'de' | 'en';
+  altLangHref: string;
+}
+const { title, description, lang, altLangHref } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" hreflang={lang === 'de' ? 'en' : 'de'} href={altLangHref} />
+    <meta name="theme-color" content="#FAFAFA" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-canvas text-ink">
+    <slot />
+    <script>
+      import '@/scripts/scroll';
+    </script>
+  </body>
+</html>
